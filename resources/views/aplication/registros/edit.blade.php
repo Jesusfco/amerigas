@@ -10,7 +10,7 @@
         <br>
         <div class="col-md-10 col-md-offset-1 ">
             <div class="panel panel-default">
-                <div class="panel-heading"><h3 style="margin: 0;" align='center'>Registrar Venta</h3></div>
+                <div class="panel-heading"><h3 style="margin: 0;" align='center'>Modificar Venta</h3></div>
                 <div class="panel-body">
                     @if(Session::has('msj'))
                         <div class="alert alert-success alert-dismissible" role="alert">
@@ -72,7 +72,7 @@
                         
                          <div class="form-group{{ $errors->has('producto') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Producto:</label>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <select name="producto" required>
                                     <option value="{{ $reporte->producto }}">{{ $reporte->producto }}</option>
                                     <option value="BUTANO">BUTANO</option>
@@ -100,6 +100,26 @@
                                     </span>
                                 @endif                                
                             </div>
+
+
+                             <label class="col-md-1 control-label">Medida</label>
+                             <div class="col-md-3">
+                                 <select name="medida" >
+                                     <option value="{{ $reporte->medida }}">{{ $reporte->medida }}</option>
+                                     <option value="L.">LITROS</option>
+                                     <option value="M3.">M3</option>
+                                     <option value="KG.">KG</option>
+                                     <option value="GAL.">GALONES</option>
+                                     <option value="B.">BARRILES</option>
+                                     <option value="T.M.">TONS. METRICA</option>
+                                 </select>
+                                 @if ($errors->has('medida'))
+                                     <span class="help-block">
+                                        <strong>{{ $errors->first('medida') }}</strong>
+                                    </span>
+                                 @endif
+                             </div>
+
                         </div>
                         
                         <div class="form-group{{ $errors->has('lugar') ? ' has-error' : '' }}">

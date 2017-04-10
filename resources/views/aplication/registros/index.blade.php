@@ -35,8 +35,8 @@
                     <table class="table table-hover table-condensed ">                
                         <thead>
                             <th>Fecha</th>
-                            <th>Volumen</th>
                             <th>Producto</th>
+                            <th>Volumen</th>
                             <th>Cliente</th>                            
                             <th>Acciones</th>
                         </thead>
@@ -47,10 +47,10 @@
                                 {{ $n->fecha_descarga }}
                             </td>
                             <td onclick="optionPop({{ $n->id }}, '{{ $n->destinatario }})">
-                                {{ $n->volumen }}
+                                {{ $n->producto }}
                             </td>
                             <td onclick="optionPop({{ $n->id }}, '{{ $n->destinatario }})">
-                                {{ $n->producto }}
+                                {{ $n->volumen }} {{$n->medida}}
                             </td>
                             <td onclick="optionPop({{ $n->id }}, '{{ $n->destinatario }})">
                                 {{ $n->destinatario }}

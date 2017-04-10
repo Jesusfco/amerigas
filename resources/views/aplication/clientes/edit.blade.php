@@ -7,7 +7,6 @@
 
 <div id="principal">
     <div class="row">
-        <br>
         <div class="col-md-10 col-md-offset-1 ">
             <div class="panel panel-default">
                 <div class="panel-heading"><h3 style="margin: 0;" align='center'>Registrar Cliente</h3></div>

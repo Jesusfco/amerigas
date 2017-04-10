@@ -7,7 +7,7 @@
 
 <div id="principal">
     <div class="row">
-        <br>
+
         <div class="col-md-10 col-md-offset-1 ">
             <div class="panel panel-default">
                 <div class="panel-heading"><h3 style="margin: 0;" align='center'>Registrar Venta</h3></div>
@@ -59,7 +59,7 @@
                         <div class="form-group{{ $errors->has('volumen') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Volumen de descarga:</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" name="volumen" value="{{ old('volumen') }}" step="0.01" required>
+                                <input type="number" class="form-control" name="volumen" value="{{ old('volumen') }}" step="0.001" required minlength=".001">
 
                                 @if ($errors->has('volumen'))
                                     <span class="help-block">
@@ -72,7 +72,7 @@
                         
                          <div class="form-group{{ $errors->has('producto') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Producto:</label>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <select name="producto" required>
                                     <option value="{{ old('producto') }}">{{ old('producto') }}</option>
                                     <option value="BUTANO">BUTANO</option>
@@ -100,22 +100,24 @@
                                     </span>
                                 @endif                                
                             </div>
-                            
-                            <div class="col-md-6">
-                                <select name="producto" required>
+
+                         <label class="col-md-1 control-label">Medida</label>
+                            <div class="col-md-3">
+                                <select name="medida" >
                                     <option value="{{ old('producto') }}">{{ old('medida') }}</option>
-                                    <option value="LITROS">LITROS</option>
-                                    <option value="M3">COMBUSTOLEOS</option>
-                                    <option value="KG">KG</option>
-                                    <option value="GAL">GALONES</option>                                    
+                                    <option value="L.">LITROS</option>
+                                    <option value="M3.">M3</option>
+                                    <option value="KG.">KG</option>
+                                    <option value="GAL.">GALONES</option>
+                                    <option value="B.">BARRILES</option>
+                                    <option value="T.M.">TONS. METRICA</option>
                                 </select>
-                                @if ($errors->has('producto'))
+                                @if ($errors->has('medida'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('medida') }}</strong>
                                     </span>
                                 @endif                                
                             </div>
-                            
                         </div>
                         
                         <div class="form-group{{ $errors->has('lugar') ? ' has-error' : '' }}">
@@ -234,6 +236,6 @@
 </script>
 @endsection
 
-<!--<input type="submit" value="" />-->
+
 
 

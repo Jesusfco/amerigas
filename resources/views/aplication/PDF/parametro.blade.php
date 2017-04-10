@@ -27,7 +27,7 @@
                     <th>#</th>
                     <th>FECHA</th>
                     <th>PRODUCTO</th>
-                    <th>VOLUMEN	EN LITROS</th>
+                    <th>CANTIDAD</th>
                     <th>LUGAR DE DESCARGA</th>
                     <th>CLIENTE</th>
                     <th>CONFIRMACION DIGITAL DE ENTREGA</th>
@@ -40,7 +40,7 @@
                     <td>{{$num}}</td>
                     <td>{{$n->fecha_descarga}}</td>
                     <td>{{$n->producto}}</td>
-                    <td>{{$n->volumen}}</td>
+                    <td>{{$n->volumen}} {{$n->medida}}</td>
                     <td>{{$n->lugar}}</td>
                     <td>{{$n->destinatario}}</td>
                     <td>ENTREGADO</td>

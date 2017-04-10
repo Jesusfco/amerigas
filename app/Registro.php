@@ -9,6 +9,6 @@ class Registro extends Model
     protected $table = 'registros';                   
             
     protected $fillable = [
-        'fecha_descarga', 'volumen', 'producto', 'lugar','receptor','repartidor','destinatario','remitente','hora_camion','hora_descarga'        
+        'fecha_descarga', 'volumen', 'producto', 'medida', 'lugar','receptor','repartidor','destinatario','remitente','hora_camion','hora_descarga'
     ];
 }

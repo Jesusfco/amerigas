@@ -23,14 +23,14 @@ class RegistrosController extends Controller
     public function index(Request $request) 
     {
         if ($request->search == NULL) {
-            $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id')
+            $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
                         ->orderBy('fecha_descarga','desc')
                         ->paginate(15);
 
             return view('aplication/registros/index')->with('registros', $registros); 
         }
         else { 
-            $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id')
+            $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
                         ->where('destinatario', 'LIKE' , "%$request->search%")
                         ->orderBy('fecha_descarga','desc')
                         ->paginate(20);
@@ -74,6 +74,7 @@ class RegistrosController extends Controller
             'lugar' => 'required',
             'receptor' => 'required',
             'repartidor' => 'required',
+            'medida' => 'required',
         ]);
         
         $registro = new Registro();
@@ -88,7 +89,7 @@ class RegistrosController extends Controller
         $registro->hora_camion = $request->hora_camion;
         $registro->hora_descarga = $request->hora_descarga;
         $registro->remitente = $request->remitente;
-        
+        $registro->medida = $request->medida;
         $registro->save();
         
         return back()->with('msj' , 1);
@@ -154,7 +155,8 @@ class RegistrosController extends Controller
                         'repartidor' => $request->repartidor,
                         'hora_camion' => $request->hora_camion,
                         'hora_descarga' => $request->hora_descarga,
-                        'remitente' => $request->remitente]);                              
+                        'remitente' => $request->remitente,
+                        'medida' => $request->medida]);
         
         return back()->with('msj' , 1);
     }
