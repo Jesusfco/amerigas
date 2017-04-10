@@ -1,0 +1,162 @@
+.logoFondo  { 
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+}
+.somos p { 
+    font-size: 18px;
+    text-align: center;
+    color: #888;
+        
+}
+.alianzas { 
+    background-color: #F1F1F1;
+}
+
+.fat { 
+    color: #2c2c2c;
+    font-family: 'Oswald', sans-serif;
+    
+}
+
+/*Slider principal*/
+
+.indicators { 
+    z-index: 200;
+}
+
+.slides { 
+    
+}
+
+.caption { 
+    text-shadow: 2px 2px 2px #000;
+  }
+.uno { }
+
+.dos { }
+
+.tres { }
+
+ 
+
+/*Curriculum!!!!!*/
+
+.curriculum img {     
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    opacity: 0;
+}
+.curriculum h5 { 
+    opacity: 0;
+    color: #888;
+}
+
+#contacto input { 
+    background-color: #F1F1F1;
+    padding-left:  15px;
+    
+    
+    border-radius: 14px 14px 14px 14px;
+-moz-border-radius: 14px 14px 14px 14px;
+-webkit-border-radius: 14px 14px 14px 14px;
+border: 0px solid #000000;
+
+}
+#contacto textarea { 
+    height: 100px;
+    background-color: #F1F1F1;
+    padding-left:  15px;
+    padding-right:   15px;
+    padding-top: 10px;
+    resize: none;
+    
+    border-radius: 14px 14px 14px 14px;
+    -moz-border-radius: 14px 14px 14px 14px;
+    -webkit-border-radius: 14px 14px 14px 14px;
+    border: 0px solid #000000;
+}
+
+#contacto input:focus { 
+    background-color: white;
+}
+
+#contacto textArea:focus { 
+    background-color: white;
+}
+button { 
+    width: 100%;
+}
+
+::-webkit-input-placeholder {
+    color:    #999;
+}
+:-moz-placeholder {
+    color:    #999;
+}
+::-moz-placeholder {
+    color:    #999;
+}
+:-ms-input-placeholder {
+    color:    #999;
+}
+
+
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+    
+   /*SLIDER*/
+    .main {
+        overflow-x: hidden;
+    }
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+

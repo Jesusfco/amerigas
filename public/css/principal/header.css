@@ -1,0 +1,14 @@
+.logoHeader { 
+    width: 200px;
+    padding-left: 20px;
+}
+.flag { 
+        
+    top: 16px;
+
+    position: fixed;
+    margin-left: 20px;
+}
+.navbar-fixed { 
+    z-index: 55000
+}

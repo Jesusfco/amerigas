@@ -1,0 +1,61 @@
+.bordes { 
+    background-color: white;
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #000000;
+}
+body { 
+    background-color: #122b40;
+}
+
+.panel-heading { 
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+}
+#accesarTittle { 
+    padding: 10px 0px 5px 10px;
+    margin: 0;
+    display: block;
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    
+    border-bottom: solid #9e9e9e;
+    
+}
+
+
+/**Inputs customized*/
+
+/* label color 
+   .input-field label {
+     color: black;
+   }
+    label focus color 
+   .input-field input[type=text]:focus + label {
+     color: red;
+   }
+    label underline focus color 
+   .input-field input[type=text]:focus {
+     border-bottom: 5px solid #0059bc;
+     box-shadow: 0 1px 0 0 #000;
+   }
+    valid color 
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+    invalid color 
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+    icon prefix focus color 
+   .input-field .prefix.active {
+     color: #000;
+   }*/

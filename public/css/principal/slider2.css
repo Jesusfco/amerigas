@@ -1,0 +1,187 @@
+@keyframes slider {
+ 
+ 0% {
+ 	left: 0;
+ }
+ 
+ 8% {
+ 	left: 0;
+ }
+ 
+ 10% {
+ 	left: -25%;
+ }
+ 
+ 18% {
+        left: -25%;
+ }
+ 
+ 20% {
+        left: -50%; 
+ }
+ 
+ 28% {
+ 	left: -50%;
+ }
+ 
+ 30% {
+ 	left: -75%;
+ }
+ 
+ 38% {
+ 	left: -75%;
+ }
+ 
+ 40% {
+ 	left: -100%;
+ }
+ 48% { 
+        left: -100%;
+ }
+ 50% { 
+        left: -125%;
+ }
+ 58% { 
+        left: -125%;
+ }
+ 60% { 
+        left: -150%;
+ }
+ 68% { 
+        left: -150%;
+ }
+ 70%{
+        left: -175%;
+ }
+ 78%{
+        left: -175%;
+ }
+ 80%{
+        left: -200%;
+ }
+ 88%{
+        left: -200%;
+ }
+ 90%{
+        left: -225%;
+ }
+ 98% { 
+        left: -225%;
+ }
+ 100% { 
+        left: -250%;
+ }
+ 
+ }
+ 
+ #slider2 {
+ 	overflow: hidden;
+ }
+ 
+ #slider2 figure img {
+ 	width: 7.1%;
+ 	float: left;
+ }
+ 
+ #slider2 figure {
+ 	position: relative;
+ 	width: 350%;
+ 	margin: 0;
+ 	left: 0;
+ 	text-align: left;
+ 	font-size: 0;
+ 	animation: 30s slider infinite; 
+ }  
+@media only screen and (max-width: 750px) {
+    @keyframes slider {
+        0% {
+               left: 0;
+        }
+         8% {
+ 	left: 0;
+        }
+
+        10% {
+               left: -50%;
+        }
+
+        18% {
+               left: -50%;
+        }
+
+        20% {
+               left: -100%; 
+        }
+
+        28% {
+               left: -100%;
+        }
+
+        30% {
+               left: -150%;
+        }
+
+        38% {
+               left: -150%;
+        }
+
+        40% {
+               left: -200%;
+        }
+        48% { 
+               left: -200%;
+        }
+        50% { 
+               left: -250%;
+        }
+        58% { 
+               left: -250%;
+        }
+        60% { 
+               left: -300%;
+        }
+        68% { 
+               left: -300%;
+        }
+        70%{
+               left: -350%;
+        }
+        78%{
+               left: -350%;
+        }
+        80%{
+               left: -400%;
+        }
+        88%{
+               left: -400%;
+        }
+        90%{
+               left: -450%;
+        }
+        98% { 
+               left: -450%;
+        }
+        100% { 
+               left: -500%;
+        }
+    }
+ 
+    #slider2 {
+           overflow: hidden;
+    }
+
+    #slider2 figure img {
+           width: 7.1%;
+           float: left;
+    }
+
+    #slider2 figure {
+           position: relative;
+           width: 700%;
+           margin: 0;
+           left: 0;
+           text-align: left;
+           font-size: 0;
+           animation: 30s slider infinite; 
+    } 
+}
