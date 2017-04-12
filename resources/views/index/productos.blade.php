@@ -26,20 +26,22 @@
     <h1 class="center fat">Productos</h1>
     <div class="row">
         @foreach($productos as $n)       
-             <div class=' col s6 m4 l3 '>
-                <div class='card'>
-                    <div class='card-image waves-effect waves-block waves-light'>
-                        <img class='activator' src='images/productos/{{$n->img}}'>
+             <div class=' col s6 m6'>
+                <div class='row card'>
+                    <div class=' col s12 l5'>
+                        <img class='activator responsive-img' src='images/productos/{{$n->img}}'>
                     </div>
-                    <div class='card-content'>
-                      <span class='card-title activator grey-text text-darken-4'>{{ $n->producto }}<i class='material-icons right'>more_vert</i></span>
+                    <div class='col s12 l7'>
+                        <h5>{{ $n->producto }}</h5>
+                        <p>{{ substr($n->descripcion,0,40 )}}...</p>
+                        <a class="btn blue">Leer mas..</a>
                     </div>
-                    <div class='card-reveal'>
-                      <span class='card-title grey-text text-darken-4'>{{ $n->producto }}<i class='material-icons right'>close</i></span>
-                      <p>{{ $n->descripcion }}</p>
+                    <div class='' style="display:none">
+                        <span class='card-title grey-text text-darken-4'>{{ $n->producto }}<i class='material-icons right'>close</i></span>
+                        <p>{{ $n->descripcion }}</p>
                     </div>
-                  </div>
-            </div>                                           
+                </div>
+            </div>
         @endforeach
 
     </div>

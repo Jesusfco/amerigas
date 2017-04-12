@@ -1,0 +1,12 @@
+#prod {
+    display: block;
+    width: 85%;
+    margin:0 auto;
+}
+
+#prod img {
+    -moz-transition: all 0.5s;
+    webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+

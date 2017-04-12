@@ -31,6 +31,7 @@
      <link href="{{ asset('css/principal/header.css')}}" type="text/css" rel="stylesheet"/>
      <link href="{{ asset('css/principal/index.css')}}" type="text/css" rel="stylesheet"/>
      <link href="{{ asset('css/principal/slider2.css')}}" type="text/css" rel="stylesheet"/>
+     <link href="{{ asset('css/principal/productos.css')}}" type="text/css" rel="stylesheet"/>
 </head>
 <body>
 <div id="loader">

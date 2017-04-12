@@ -11,7 +11,7 @@
             <center>
                 <img src='images/productos/{{$n->img}}'>
             </center>
-            <p>{{ $n->descripcionEng }}</p>
+            <p><?php echo $n->descripcionEng; ?></p>
         </div>
     </li>        
               
@@ -30,15 +30,15 @@
             <div class=' col s6 m4 l3 '>
                 <div class='card'>
                     <div class='card-image waves-effect waves-block waves-light'>
-                        <img class='activator' src='images/productos/{{$n->img}}'>
+                        <img class='' src='images/productos/{{$n->img}}'>
                     </div>
                     <div class='card-content'>
-                      <span class='card-title activator grey-text text-darken-4'>{{ $n->product }}<i class='material-icons right'>more_vert</i></span>
+                      <span class='card-title activator grey-text text-darken-4'>{{ $n->product }}</span>
 
                     </div>
                     <div class='card-reveal'>
                       <span class='card-title grey-text text-darken-4'>{{ $n->product }}<i class='material-icons right'>close</i></span>
-                      <p>{{ $n->descripcionEng }}</p>
+                      <p><?php echo $n->descripcionEng; ?></p>
                     </div>
                   </div>
             </div>                                           

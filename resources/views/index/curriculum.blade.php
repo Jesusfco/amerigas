@@ -26,7 +26,7 @@
             <div class='row white valign-wrapper z-depth-3'>          
                 <div class='col s12 m6'>
                     <h5 class='light valign' id='list{{$n->id}}'>
-                        {{ $n->descripcion}}
+                        <?php echo $n->descripcion; ?>
                     </h5>                
                 </div>
                 <div class='col s12 m6'>

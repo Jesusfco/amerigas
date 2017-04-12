@@ -12,7 +12,7 @@
                 </div>
                 <div class='col s12'>
                     <p class='light' id='list{{$n->id}}' style='opacity: 0'>
-                        {{$n->descripcionEng}}
+                        <?php echo $n->descripcionEng; ?>
                     </p>                
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div class='row white valign-wrapper z-depth-3'>          
                     <div class='col s12 m6'>
                         <h5 class='light valign' id='list{{$n->id}}'>
-                            {{ $n->descripcionEng}}
+                            <?php echo $n->descripcionEng; ?>
                         </h5>                
                     </div>
                     <div class='col s12 m6'>
