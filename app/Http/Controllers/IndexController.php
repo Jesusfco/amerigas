@@ -36,18 +36,19 @@ class IndexController extends Controller
         $_message = $request->mensaje;
         $_email = $request->correo;
         $_name = $request->nombre;
-       
+
+
         $_toSend = "Nombre: " . $_name . "\nE-mail: " . $_email . "\n\nMensaje:\n" . $_message;
-        $to = "jfcr@live.com";
-//             $to = "ventasamerigas@gmail.com";
+        //$to = "jfcr@live.com";
+        $to = "ventasamerigas@gmail.com";
         $subject = "Cliente: " . $_name . " - " . $_email;
         $headers = "From: $_email" . "\r\n" .
             "CC: " . $_email;
-	 
-	
+
+
         if (mail($to, $subject, $_toSend, $headers)) {
             echo true;
-        } else { 
+        } else {
             return false;
         }
 

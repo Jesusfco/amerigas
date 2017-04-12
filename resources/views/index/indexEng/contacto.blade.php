@@ -7,6 +7,7 @@
             <div class="col s12 m8 offset-m2 l6 offset-l3">
             <input type="email" placeholder="E-mail"  name="correo" required>
             <input type="text" placeholder="Your Name" name="nombre" required>
+                {{ csrf_field() }}
             <textarea name="mensaje" placeholder="Write your message" required></textarea>
             <br><br>
             <center>
