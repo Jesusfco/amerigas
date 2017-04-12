@@ -25,7 +25,7 @@
                     <table class="table table-hover table-condensed">                
                         <thead>
                             <th>Fecha</th>
-                            <th>Volumen</th>
+                            <th>Cantidad</th>
                             <th>Producto</th>
                             <th>Entregado a:</th>                            
                             

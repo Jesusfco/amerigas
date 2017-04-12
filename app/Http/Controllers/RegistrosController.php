@@ -27,7 +27,10 @@ class RegistrosController extends Controller
                         ->orderBy('fecha_descarga','desc')
                         ->paginate(15);
 
-            return view('aplication/registros/index')->with('registros', $registros); 
+
+            cantidades($registros);
+
+            return view('aplication/registros/index')->with('registros', $registros);
         }
         else { 
             $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
@@ -171,5 +174,74 @@ class RegistrosController extends Controller
     {
         Registro::where('id', $request->id)->delete();
         echo 'succes';
+    }
+}
+
+function cantidades($volumen) {
+    foreach($volumen as $n) {
+        if($n->volumen >=1000) {
+            $nuevo = NULL;
+            $pos = strpos($n->volumen, '.');
+
+            if($pos) {
+
+                $variable = $n->volumen;
+
+                $decimales = explode(".", $variable);
+                $moment = str_split($decimales[0]);
+                $x = count($moment);
+                if ($variable < 1000000) {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x -3 == $z) {
+
+                            $nuevo .=  ',';
+                        }
+                        $nuevo .= $moment[$z];
+                    }
+                }
+                else {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x - 3  == $z) {
+                            $nuevo = $nuevo . ',';
+                        }    if ($x - 6  == $z) {
+                            $nuevo = $nuevo . '´';
+                        }
+                        $nuevo = $nuevo . $moment[$z];
+                    }
+                }
+                $nuevo = $nuevo . "."  . $decimales[1];
+
+            } else {
+                $variable = $n->volumen;
+                $moment = str_split($n->volumen);
+                $x = count($moment);
+
+                if ($variable < 1000000) {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x - 3 == $z) {
+
+                            $nuevo .=  ',';
+                        }
+                        $nuevo .= $moment[$z];
+                    }
+                }
+                else {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x - 3 == $z) {
+                            $nuevo = $nuevo . ',';
+                        } else if ($x - 6 == $z) {
+                            $nuevo = $nuevo . '´';
+                        }
+                        $nuevo = $nuevo . $moment[$z];
+                    }
+                }
+            }
+
+             $n->volumen = $nuevo;
+        }
     }
 }

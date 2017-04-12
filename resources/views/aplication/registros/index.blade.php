@@ -36,7 +36,7 @@
                         <thead>
                             <th>Fecha</th>
                             <th>Producto</th>
-                            <th>Volumen</th>
+                            <th>Cantidad</th>
                             <th>Cliente</th>                            
                             <th>Acciones</th>
                         </thead>

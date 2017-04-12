@@ -22,6 +22,9 @@ class ClientReportesController extends Controller
         $registros = Registro::where('destinatario', Auth::user()->empresa)
                         ->orderBy('fecha_descarga','desc')
                         ->paginate(15);
+
+        cantidades($registros);
+
         return view('clientes/registroCompras')->with('registros', $registros);
     }
     
@@ -46,8 +49,10 @@ class ClientReportesController extends Controller
             $año = substr($fecha[0], 2);
             $n->fecha_descarga =  $fecha[2] ."-".conseguirMesMin($fecha[1]) . "-" . $año;
         }
+        cantidades($registro);
 
         $mes = conseguirMes($date1['mon']) . " - " . $date1['year'];
+
         
         $pdf = PDF::loadView('aplication/PDF/mes',['registros' => $registro,'mes'=> $mes]);
         return $pdf->stream('Amerigas-RegistroVentas Mes: '.$date1["mon"]."-".$date1["year"].'.pdf');
@@ -73,6 +78,8 @@ class ClientReportesController extends Controller
             $año = substr($fecha[0], 2);
             $n->fecha_descarga =  $fecha[2] ."-".conseguirMesMin($fecha[1]) . "-" . $año;
         }
+
+        cantidades($registros);
         
         $pdf = PDF::loadView('aplication/PDF/parametro',['registros' => $registros, 'fecha1' => $fecha1, 'fecha2' => $fecha2]);
         return $pdf->stream('Amerigas-RegistroVentas-Periodo: '.$fecha1."/".$fecha2.'.pdf');                   
@@ -139,5 +146,76 @@ function conseguirMesMin($mes) {
         case '12':
             return 'DIC';
         
+    }
+}
+
+function cantidades($volumen) {
+    foreach($volumen as $n) {
+        if($n->volumen >=1000) {
+            $nuevo = NULL;
+            $pos = strpos($n->volumen, '.');
+
+            if($pos) {
+
+                $variable = $n->volumen;
+
+                $decimales = explode(".", $variable);
+                $moment = str_split($decimales[0]);
+                $x = count($moment);
+                if ($variable < 1000000) {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x -3 == $z) {
+
+                            $nuevo .=  ',';
+                        }
+                        $nuevo .= $moment[$z];
+                    }
+                }
+                else {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x - 3  == $z) {
+                            $nuevo = $nuevo . ',';
+                        }    if ($x - 6  == $z) {
+                            $nuevo = $nuevo . '´';
+                        }
+                        $nuevo = $nuevo . $moment[$z];
+                    }
+                }
+                $nuevo = $nuevo . "."  . $decimales[1];
+
+            } else {
+                $variable = $n->volumen;
+                $moment = str_split($n->volumen);
+                $x = count($moment);
+
+                if ($variable < 1000000) {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x - 3 == $z) {
+
+                            $nuevo .=  ',';
+                        }
+                        $nuevo .= $moment[$z];
+                    }
+                }
+                else {
+                    for ($z = 0; $z <= count($moment) - 1; $z++) {
+
+                        if ($x - 3 == $z) {
+                            $nuevo = $nuevo . ',';
+                        } else if ($x - 6 == $z) {
+                            $nuevo = $nuevo . '´';
+                        }
+                        $nuevo = $nuevo . $moment[$z];
+                    }
+                }
+            }
+
+            $n->volumen = $nuevo;
+
+
+        }
     }
 }

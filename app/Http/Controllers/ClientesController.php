@@ -22,7 +22,8 @@ class ClientesController extends Controller
     {
         if($request->search == null) {
             $clientes = User::where('level', '=', '0')
-                ->paginate(15);        
+                ->paginate(15);
+
             return view('aplication/clientes/index')->with(['clientes' => $clientes]);
         }
         else { 
@@ -156,5 +157,6 @@ class ClientesController extends Controller
         return $user->empresa;
     }
 }
+
 
 

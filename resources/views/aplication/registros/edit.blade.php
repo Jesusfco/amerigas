@@ -57,7 +57,7 @@
                         </div>
                         
                         <div class="form-group{{ $errors->has('volumen') ? ' has-error' : '' }}">
-                            <label class="col-md-4 control-label">Volumen de descarga:</label>
+                            <label class="col-md-4 control-label">Cantidad de descarga:</label>
                             <div class="col-md-6">
                                 <input type="number" class="form-control" name="volumen" value="{{ $reporte->volumen }}" step="0.01" required>
 
