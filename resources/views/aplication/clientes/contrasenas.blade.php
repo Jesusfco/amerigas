@@ -38,7 +38,7 @@
                     </thead>
                     <tbody>
                     @foreach($usuarios as $n)
-                    <tr onclick="newContrasenaPop({{ $n->id }}, '{{ $n->empresa }}')">
+                    <tr ondblclick="newContrasenaPop({{ $n->id }}, '{{ $n->empresa }}')">
                         <td>
                             {{ $n->empresa }}
                         </td>

@@ -37,7 +37,7 @@
                                 {{ $n->fecha_descarga }}
                             </td>
                             <td onclick="optionPop({{ $n->id }}, '{{ $n->destinatario }})">
-                                {{ $n->volumen }}
+                                {{ $n->volumen }} {{ $n->medida }}
                             </td>
                             <td onclick="optionPop({{ $n->id }}, '{{ $n->destinatario }})">
                                 {{ $n->producto }}
