@@ -49,7 +49,7 @@
                             {{ $n->name }}
                         </td>                                                    
                         <td style="z-index: 100">                            
-                            <a  onclick="modificar({{ $n->id }}, '{{ $n->empresa }}')" class="btn btn-danger btn-xs"> Restablece Contraseña</a>                                                                
+                            <a  onclick="newContrasenaPop({{ $n->id }}, '{{ $n->empresa }}')" class="btn btn-danger btn-xs"> Restablece Contraseña</a>
                         </td>                            
                     </tr>                                                
                     @endforeach

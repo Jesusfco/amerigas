@@ -59,7 +59,7 @@ function eliminar(n, name) {
 //                                alert(thrownError);
                 setTimeout(function(){
                     swal({
-                        title: "Error",
+                        title: "Error: " + xhr,
                         text: "No se ha podido eliminar el Cliente",
                         timer: 1500,
                         type: 'error',

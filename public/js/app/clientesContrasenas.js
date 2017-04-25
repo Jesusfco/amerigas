@@ -16,7 +16,8 @@ function newContrasenaPop(id,empresa) {
             confirmButtonText: "Modificar",        
             cancelButtonText: "Cancelar",                    
             closeOnCancel: true,
-            inputPlaceholder: "*************"
+            inputPlaceholder: "*************",
+            allowOutsideClick: true
           },
          function(inputValue){
             if (inputValue === false) return false;
@@ -36,7 +37,8 @@ function newContrasenaPop(id,empresa) {
                 animation: "slide-from-top",
                 cancelButtonColor: "red",
                 confirmButtonText: "Confirmar",        
-                cancelButtonText: "Cancelar",                    
+                cancelButtonText: "Cancelar",
+                allowOutsideClick: true,
                 closeOnCancel: true,
                 inputPlaceholder: "*************************"
               },function(inputValue) {
@@ -98,7 +100,7 @@ function ajaxRequest(id,contraseña){
             setTimeout(function(){
                 swal({
                     title: "Error",
-                    text: "No se pudo restablecer la contraseña, si el problema persiste pongase en contacto con el tecnico",
+                    text: "No se pudo restablecer la contraseña, si el problema persiste póngase en contacto con el técnico",
                     timer: 1500,
                     type: 'error',
                     showConfirmButton: false
