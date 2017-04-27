@@ -50,4 +50,10 @@
   </div>
 
 
+
+<style>
+    .slider .indicators .indicator-item.active{
+        background-color: blue;
+    }
+</style>
     

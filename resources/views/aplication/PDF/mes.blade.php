@@ -10,6 +10,7 @@
     <div>
         <div class="logoContainer">
             <img src="images/amerigas.png" style="margin-top: 0px; width: 150px;">
+            {{--<img src="{{url('images/amerigas.png')}}" style="margin-top: 0px; width: 150px;">--}}
         </div>
         <div class="marca">
             <h3>AMERIGAS PROPANE LP SA DE CV</h3>

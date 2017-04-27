@@ -20,12 +20,12 @@
     @else
         @foreach($historias as $n)
 
-            <h3 class='center fat'>{{$n->fechaEng }}</h3>  
-                <div class='row white valign-wrapper z-depth-3'>          
+            <h3 class='center fat'>{{$n->fechaEng }}</h3>
+                <div class='row white valign-wrapper z-depth-3'>
                     <div class='col s12 m6'>
                         <h5 class='light valign' id='list{{$n->id}}'>
                             <?php echo $n->descripcionEng; ?>
-                        </h5>                
+                        </h5>
                     </div>
                     <div class='col s12 m6'>
                         <img src='images/curriculum/{{ $n->img }}' id='sur{{$n->id}}'>

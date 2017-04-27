@@ -1,16 +1,21 @@
- $(document).ready(function(){   
+ $(window).load(function(){
     $('.slider').slider();
       
     var heightVenta = $(window).height();
-    var alturaHijo = $('#hijoParallax').height();
+
+     $('.slider').height(heightVenta -80);
+     $('.slides').height(heightVenta -60);
+
     var alturaCaption = $('.caption').height();
-    var mitad = heightVenta/2;
+    var mitad = $('.slider').height()/2;
     alturaCaption = alturaCaption/2;
     alturaCaption = mitad - alturaCaption;
-//    $('.caption').css("top", alturaCaption);
+   $('.caption').css({"top": alturaCaption - 100});
+   console.log('Altura caption:' + alturaCaption);
+     console.log('Slider height:' + heightVenta);
+     console.log("mitad: "  + mitad);
 
-    $('.slider').height(heightVenta -80);
-    $('.slides').height(heightVenta -60);
+
     
 });
 

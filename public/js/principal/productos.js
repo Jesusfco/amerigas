@@ -1,11 +1,11 @@
-$(document).ready(function(){
+function showProducto(producto, descripcion,  img) {
 
-    $('#prod img').click(function(){
-        $(this).animate({
-
-            position: 'fixed',
-
-        },400);
+    swal({
+        title: "<small>" + producto + "</small>",
+        text: "<img src='images/productos/"+img+"'><div>" + descripcion + "</div>",
+        html: true,
+        allowOutsideClick: true,
+        confirmButtonColor: "#0574ba"
     });
 
-});
+}

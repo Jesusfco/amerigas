@@ -33,8 +33,8 @@
                     </div>
                     <div class='col s12 l7'>
                         <h5>{{ $n->producto }}</h5>
-                        <p>{{ substr($n->descripcion,0,40 )}}...</p>
-                        <a class="btn blue">Leer mas..</a>
+                        <p>{{ substr($n->descripcion,0,35 )}}...</p>
+                        <a class="btn blue" onclick="showProducto('{{$n->producto}}','<?php echo $n->descripcion; ?>', '{{$n->img}}')">Leer mas..</a>
                     </div>
                     <div class='' style="display:none">
                         <span class='card-title grey-text text-darken-4'>{{ $n->producto }}<i class='material-icons right'>close</i></span>

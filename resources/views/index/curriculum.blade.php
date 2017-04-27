@@ -2,7 +2,7 @@
     <br><br>
     <h1 class="center fat">Experiencia</h1>
     <br>
-    <div class="container">
+    <div class="container row">
 @if(isset($mov))
     @foreach($historias as $n)
     <h3 class='center fat'>{{ $n->fecha}}</h3>
@@ -21,18 +21,27 @@
     @endforeach
 @else
     @foreach($historias as $n)
-    
-        <h3 class='center fat'>{{$n->fecha }}</h3>  
-            <div class='row white valign-wrapper z-depth-3'>          
-                <div class='col s12 m6'>
-                    <h5 class='light valign' id='list{{$n->id}}'>
-                        <?php echo $n->descripcion; ?>
-                    </h5>                
+
+        <div class="col l4 m6">
+            <div class="card" id="curriculumDiv">
+                <div style="background-image:  url(images/curriculum/{{ $n->img }})" id="curriculumImg">
+                    <a class="btn-floating btn-large waves-effect waves-light light-blue darken-3">
+                        <i class="material-icons">description</i>
+                    </a>
                 </div>
-                <div class='col s12 m6'>
-                    <img src='images/curriculum/{{ $n->img }}' id='sur{{$n->id}}'>
+                <div class="row">
+                    <div class="col s3">
+                        <div class=" red darken-4 center white-text "><i class="material-icons white-text">today</i>
+                            {{$n->fecha }}</div>
+                    </div>
+                    <div class="col s9">
+                        <p>{{ substr($n->descripcion,0,90) }}...</p>
+                    </div>
                 </div>
             </div>
+        </div>
+
+
     @endforeach
 @endif
     </div> 

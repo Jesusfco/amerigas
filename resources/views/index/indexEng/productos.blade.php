@@ -17,35 +17,30 @@
               
     @endforeach    
     </ul>                            
-</div>    
+</div>
 
 @else
-<div id="prod">
-    <br><br>
-    <h1 class="center fat">Products</h1>
-    <div class="row">
-@foreach($productos as $n)
 
-        
-            <div class=' col s6 m4 l3 '>
-                <div class='card'>
-                    <div class='card-image waves-effect waves-block waves-light'>
-                        <img class='' src='images/productos/{{$n->img}}'>
+    <div id="prod">
+        <br><br>
+        <h1 class="center fat">Products</h1>
+        <div class="row">
+            @foreach($productos as $n)
+                <div class=' col s6 m6'>
+                    <div class='row card'>
+                        <div class=' col s12 l5'>
+                            <img class='activator responsive-img' src='images/productos/{{$n->img}}'>
+                        </div>
+                        <div class='col s12 l7'>
+                            <h5>{{ $n->product }}</h5>
+                            <p>{{ substr($n->descripcionEng,0,35 )}}...</p>
+                            <a class="btn blue" onclick="showProducto('{{$n->product}}','{{ $n->descripcionEng }}', '{{$n->img}}')">Leer mas..</a>
+                        </div>
                     </div>
-                    <div class='card-content'>
-                      <span class='card-title activator grey-text text-darken-4'>{{ $n->product }}</span>
+                </div>
+            @endforeach
 
-                    </div>
-                    <div class='card-reveal'>
-                      <span class='card-title grey-text text-darken-4'>{{ $n->product }}<i class='material-icons right'>close</i></span>
-                      <p><?php echo $n->descripcionEng; ?></p>
-                    </div>
-                  </div>
-            </div>                                           
-
-@endforeach
+        </div>
 
     </div>
-    
-</div>
 @endif
