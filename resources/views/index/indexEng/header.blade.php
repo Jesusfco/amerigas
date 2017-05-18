@@ -14,6 +14,7 @@
             <li><a id="ali">Joint Ventures</a></li>
             <li><a id="pro">Products</a></li>
             <li><a id="cur">Résumé</a></li>
+            <li><a id="pdfL">PDF</a></li>
             <li><a id="cont">Contact</a></li>    
             <li><a href="login"><i class="material-icons right">work</i><span style="display: inline">Login</span></a></li>
         </ul>
@@ -25,6 +26,7 @@
             <li><a id="ali1">Joint Ventures</a></li>
             <li><a id="pro1">Products</a></li>
             <li><a id="cur1">Résumé</a></li>
+            <li><a id="pdfmov">PDF</a></li>
             <li><a id="cont1">Contact</a></li>
             <li><a href="login"><i class="material-icons right">work</i><span style="display: inline">Login</span></a></li>
         </ul>

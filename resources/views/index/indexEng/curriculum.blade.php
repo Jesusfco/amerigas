@@ -2,40 +2,49 @@
     <br><br>
     <h1 class="center fat">Résumé</h1>
     <br>
-    <div class="container">
-    @if(isset($mov))
-        @foreach($historias as $n)
-            <h3 class='center fat'>{{ $n->date}}</h3>
-            <div class='row z-depth-2'><br>
-                 <div class='col s12 m6'>
-                    <img id='sur{{$n->id}}' src='images/mov/curriculum/{{$n->img}}'>
-                </div>
-                <div class='col s12'>
-                    <p class='light' id='list{{$n->id}}' style='opacity: 0'>
-                        <?php echo $n->descripcionEng; ?>
-                    </p>                
-                </div>
-            </div>
-        @endforeach
-    @else
+    <div id="curriculumContainer">
+
         @foreach($historias as $n)
 
-            <h3 class='center fat'>{{$n->fechaEng }}</h3>
-                <div class='row white valign-wrapper z-depth-3'>
-                    <div class='col s12 m6'>
-                        <h5 class='light valign' id='list{{$n->id}}'>
-                            <?php echo $n->descripcionEng; ?>
-                        </h5>
+                <div class="card" id="curriculumDiv">
+                    <div id="sur{{$n->id}}" style="opacity: 0">
+                        <div onclick="curriculum({{$n->id}});">
+                            <div style="background-image:  url(images/mov/curriculum/{{ $n->img }})" id="curriculumImg">
+                                <a class="btn-floating btn-large waves-effect waves-light light-blue darken-3">
+                                    <i class="material-icons">description</i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s3" style="padding: 0">
+                                <div class=" red darken-4 center white-text " id="curriculumDate" style="padding: 3px"><i class="material-icons white-text">today</i><br>
+                                    {{$n->fechaEng }}</div>
+                            </div>
+                            <div class="col s9">
+                                <p>{!!   substr($n->descripcionEng,0,95) !!}...</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class='col s12 m6'>
-                        <img src='images/curriculum/{{ $n->img }}' id='sur{{$n->id}}'>
+                    <div class="card-action" id="curriculumLeer" onclick="curriculum({{$n->id}});">
+                        <span>LEER MAS...</span>
                     </div>
                 </div>
         @endforeach
-    @endif
-    </div> 
+
+</div>
+
     <center>
         <a class="btn red darken-4" href="pdf/CV_AMERIGAS_PROPANE-ENG.pdf" target="_blank">Download Resume<i class="material-icons">play_for_work</i></a>
     </center>
     <br>
+</div>
+
+<div id="curriculumWindow" style="display: none">
+    <div id="popCurriculum">
+        <div>
+            <img>
+        </div>
+        <h5></h5>
+        <p></p>
+    </div>
 </div>

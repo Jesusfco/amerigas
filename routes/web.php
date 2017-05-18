@@ -17,6 +17,8 @@ Route::get('mov', 'IndexController@mov' );
 Route::get('moveng', 'IndexController@movEng' );
 Route::post('message', 'IndexController@message');
 
+Route::get('curriculum', 'IndexController@findCurriculum' );
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

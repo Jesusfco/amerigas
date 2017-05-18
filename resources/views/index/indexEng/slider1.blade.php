@@ -58,5 +58,9 @@
   </div>
 
 
-
+<style>
+  .slider .indicators .indicator-item.active{
+    background-color: #2b69ce;
+  }
+</style>
     

@@ -32,8 +32,12 @@
      <link href="{{ asset('css/principal/index.css')}}" type="text/css" rel="stylesheet"/>
      <link href="{{ asset('css/principal/slider2.css')}}" type="text/css" rel="stylesheet"/>
      <link href="{{ asset('css/principal/productos.css')}}" type="text/css" rel="stylesheet"/>
+     <link href="{{ asset('css/principal/curriculum.css')}}" type="text/css" rel="stylesheet"/>
+     <link href="{{ asset('css/principal/pdf.css')}}" type="text/css" rel="stylesheet"/>
 </head>
 <body>
+
+<input type="hidden" value="eng" id="idioma">
 <div id="loader">
     
     <center>
@@ -54,6 +58,7 @@
 <div id="contein">
 @extends('index.scripts')
 @extends('index.indexEng.contacto')
+@extends('index.indexEng.descargas')
 @extends('index.indexEng.curriculum')
 @extends('index.indexEng.productos')
 @extends('index.indexEng.slider2')

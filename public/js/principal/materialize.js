@@ -3683,7 +3683,7 @@ $(document).ready(function(){
         $this.hammer({
             prevent_default: false
         }).bind('pan', function(e) {
-          if (e.gesture.pointerType === "touch") {
+          if (e.gesture.pointerType === "") {
 
             // reset interval
             clearInterval($interval);

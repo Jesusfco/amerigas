@@ -1,0 +1,55 @@
+.pdfcontainer {
+    width: 80%;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    max-width: 1200px;
+
+    padding: 10px;
+}
+
+.pdfIcon{
+    width:50%;
+}
+
+.pdfIcon img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.pdfArchives {
+    width: 50%;
+}
+
+.pdfArchives a {
+
+    display: block;
+    margin: 0 auto;
+    float: right;
+    margin-top: 10px;
+    height: auto !important;
+}
+
+
+@media screen and (max-width: 950px) {
+    .pdfcontainer {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .pdfIcon {
+        width: 100%;
+    }
+    .pdfArchives {
+        width: 100%;
+    }
+
+    .pdfArchives a{
+        float: none;
+    }
+}

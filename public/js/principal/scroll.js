@@ -92,3 +92,16 @@ $("#pro1").click(function(){
         scrollTop: posicion
     }, 750);     
 });
+
+$("#pdfL").click(function(){
+    var posicion = $("#pdf").offset().top;
+    $("html, body").animate({
+        scrollTop: posicion
+    }, 750);
+});
+$("#pdfmov").click(function(){
+    var posicion = $("#pdf").offset().top;
+    $("html, body").animate({
+        scrollTop: posicion
+    }, 750);
+});

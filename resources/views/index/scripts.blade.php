@@ -9,6 +9,7 @@
 <script src="{{ asset('js/principal/scrollFire.js')}}"></script>
 <script src="{{ asset('js/principal/message.js')}}"></script>
 <script src="{{ asset('js/principal/productos.js')}}"></script>
+<script src="{{ asset('js/principal/curriculum.js')}}"></script>
 <script src="{{ asset('loader/loader.js')}}"></script>
 
 

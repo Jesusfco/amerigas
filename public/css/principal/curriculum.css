@@ -1,3 +1,39 @@
+
+
+#curriculumContainer {
+
+    width: 85%;
+    margin:0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    max-width: 1200px;
+}
+
+#curriculumDate {
+    position: relative;
+    top: -30px;
+    left: 5px;
+}
+
+#curriculumLeer {
+    text-align: center;
+    color: red;
+    font-weight: 900;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+}
+
+#curriculumLeer:hover {
+    background: #2196F3;
+    color: white;
+}
+
+#curriculumText {
+    margin-bottom: 0;
+}
+
 #curriculumImg {
     background-size: cover;
     background-position: center;
@@ -16,6 +52,7 @@
     -ms-flex-align: center;
     align-items: center;
     text-align: center;
+    cursor: pointer;
 }
 
 #curriculumDiv a {
@@ -34,11 +71,94 @@
 
 
 #curriculumDiv {
-    height: 450px;
+    width: 31%;
     overflow: hidden;
     background-color: white;
+    margin: 1%;
 }
 
 #currulumDiv p {
     line-height: 0rem;
+}
+
+
+
+
+#curriculumWindow {
+    background: rgba(0,0,0,.5);
+    width: 100vw; height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 100000 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popCurriculum {
+    width: 40%;
+    max-width: 1000px;
+    background: white;
+    padding: 13px;
+    border-radius: 10px;
+    max-height: 75%;
+    overflow-x: overlay;
+
+
+    -webkit-box-shadow: 0px 0px 39px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 39px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 39px 0px rgba(0,0,0,0.75);
+}
+
+#popCurriculum div{
+
+    width: 100%;
+    height: 30%;
+    overflow: hidden;
+    display: block;
+}
+
+#popCurriculum div img{
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+#popCurriculum h5 {
+    background: #B71C1C;
+    color: white;
+    padding: 5px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#popCurriculum:hover {
+    cursor: pointer;
+}
+
+
+@media screen and (max-width: 950px) {
+    #curriculumContainer {
+        width: 98%;
+    }
+
+    #popCurriculum {
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #curriculumDiv {
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    #curriculumDiv {
+        width: 97%;
+    }
+
+    #popCurriculum{
+        width: 95%;
+    }
 }

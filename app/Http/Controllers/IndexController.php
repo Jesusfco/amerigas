@@ -54,5 +54,10 @@ class IndexController extends Controller
 
 
     }
+
+    public function findCurriculum(Request $request){
+
+        return Curriculum::find($request->id);
+    }
 }
 
