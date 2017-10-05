@@ -24,9 +24,9 @@
     <div id="prod">
         <br><br>
         <h1 class="center fat">Products</h1>
-        <div class="row">
+        <div class="productoContainer">
             @foreach($productos as $n)
-                <div class=' col s6 m6'>
+                <div class='productoCard'>
                     <div class='row card'>
                         <div class=' col s12 l5'>
                             <img class='activator responsive-img' src='images/productos/{{$n->img}}'>

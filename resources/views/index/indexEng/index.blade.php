@@ -58,7 +58,7 @@
 <div id="contein">
 @extends('index.scripts')
 @extends('index.indexEng.contacto')
-@extends('index.indexEng.descargas')
+{{--@extends('index.indexEng.descargas')--}}
 @extends('index.indexEng.curriculum')
 @extends('index.indexEng.productos')
 @extends('index.indexEng.slider2')

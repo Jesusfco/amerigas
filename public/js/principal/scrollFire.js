@@ -1,4 +1,4 @@
- var options = [                        
+ var options = [
     {
         selector: '#sur1', offset: 150, callback: function(el) { 
             Materialize.fadeInImage($(el));
@@ -148,6 +148,40 @@
             Materialize.fadeInImage($(el));
         } 
     },
+
+     {
+         selector: '#list14', offset: 150, callback: function(el) {
+         Materialize.fadeInImage($(el));
+     }
+     },
+     {
+         selector: '#sur14', offset: 150, callback: function(el) {
+         Materialize.fadeInImage($(el));
+     }
+     },
+
+     {
+         selector: '#list15', offset: 150, callback: function(el) {
+         Materialize.fadeInImage($(el));
+     }
+     },
+     {
+         selector: '#sur15', offset: 150, callback: function(el) {
+         Materialize.fadeInImage($(el));
+     }
+     },
+
+     {
+         selector: '#list16', offset: 150, callback: function(el) {
+         Materialize.fadeInImage($(el));
+     }
+     },
+     {
+         selector: '#sur16', offset: 150, callback: function(el) {
+         Materialize.fadeInImage($(el));
+     }
+     },
+
     {
         selector: '#staggered-test', offset: 280, callback: function(el) { 
             Materialize.showStaggeredList($(el)); } 
