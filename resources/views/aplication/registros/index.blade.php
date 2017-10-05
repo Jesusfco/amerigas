@@ -16,7 +16,7 @@
                 <div class="col-xs-12 col-sm-6">
                     <form method="GET" class="navbar-form" style="margin-top: 22px;">
                         <div class="input-group">
-                            <input name="search" class="form-control" placeholder="Buscar por Cliente" autofocus>
+                            <input name="search" id="autocomplete" class="form-control" placeholder="Buscar por Cliente" autofocus>
                             <span class="input-group-btn">
 
                             <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span> Buscar</button>
@@ -77,4 +77,19 @@
 @section('javascript')
     <script src="{{asset('sweet/sweetalert.min.js')}}"></script>
     <script src="{{asset('js/app/registroIndex.js')}}"></script>
+    <script src="{{ url('js/jqueryAutocomplete/jquery-ui.min.js')}}"></script>
+    <script>
+
+        $( function() {
+            var availableTags = [
+                @foreach($users as $n)
+                    "<?php echo $n->empresa; ?>",
+                @endforeach
+            ];
+            $( "#autocomplete" ).autocomplete({
+                source: availableTags,
+                minLength: 1
+            });
+        } );
+    </script>
 @endsection

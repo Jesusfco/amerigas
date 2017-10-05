@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Registro;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -113,8 +114,13 @@ class ClientesController extends Controller
      */
     public function drop(Request $request)
     {
-        User::where('id', $request->id)->delete();
-        echo 'succes';
+        if( (Registro::where('user_id', $request->id)->get()) == NULL ){
+            User::where('id', $request->id)->delete();
+            return response()->json(['message' => 'El usuario ha sido eliminado']);
+        }
+
+        return response()->json(['message' => 'El usuario tiene registros, por lo que no podra ser eliminado'], 402);
+
     }
     
     public function search(Request $request) 

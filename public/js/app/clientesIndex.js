@@ -57,16 +57,31 @@ function eliminar(n, name) {
             error: function(xhr, ajaxOptions, thrownError){
 //                                alert(xhr.status);
 //                                alert(thrownError);
+//                 console.log(xhr);
                 setTimeout(function(){
-                    swal({
-                        title: "Error: " + xhr,
-                        text: "No se ha podido eliminar el Cliente",
-                        timer: 1500,
-                        type: 'error',
-                        showConfirmButton: false,
-                        allowEscapeKey:true,
-                        allowOutsideClick:true   
-                    });
+                    if(xhr.status == 402){
+                        swal({
+                            title: "Error: " + xhr.status,
+                            text: xhr.responseJSON.message,
+                            timer: 2500,
+                            type: 'error',
+                            showConfirmButton: false,
+                            allowEscapeKey:true,
+                            allowOutsideClick:true
+                        });
+                    }
+                    else {
+                        swal({
+                            title: "Error: " + xhr.status,
+                            text: "El usuario no ha podido ser eliminado",
+                            timer: 2500,
+                            type: 'error',
+                            showConfirmButton: false,
+                            allowEscapeKey:true,
+                            allowOutsideClick:true
+                        });
+                    }
+
                 });                                                                
             }//Error
         });//AJAX                                        

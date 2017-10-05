@@ -11,7 +11,7 @@ class IndexController extends Controller
     public function index() { 
         $productos = Producto::select('producto', 'descripcion', 'img')->get();
         $historias = Curriculum::select('id','fecha' , 'descripcion', 'img')->get();                
-        return view('index/index')->with(['productos' =>$productos, 'historias' => $historias]);        
+        return view('index/index')->with(['productos' => $productos, 'historias' => $historias]);
     }
     
     public function eng() { 

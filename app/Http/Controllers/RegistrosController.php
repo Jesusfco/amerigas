@@ -22,25 +22,38 @@ class RegistrosController extends Controller
     
     public function index(Request $request) 
     {
+        $users = User::select('empresa')
+                    ->where('level', 0)
+                    ->get();
+
         if ($request->search == NULL) {
-            $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
+            $registros = Registro::select('user_id' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
                         ->orderBy('fecha_descarga','desc')
                         ->paginate(15);
 
+            foreach($registros as $x){
+                $x->destinatario = (User::find($x->user_id))->empresa;
+            }
 
             cantidades($registros);
 
-            return view('aplication/registros/index')->with('registros', $registros);
-        }
-        else { 
-            $registros = Registro::select('destinatario' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
-                        ->where('destinatario', 'LIKE' , "%$request->search%")
+        } else {
+
+            $search = User::where('empresa', $request->search)->first();
+
+            $registros = Registro::select('user_id' ,'fecha_descarga','volumen' ,'producto','id', 'medida')
+                        ->where('user_id', $search->id)
                         ->orderBy('fecha_descarga','desc')
                         ->paginate(20);
 
-            return view('aplication/registros/index')->with('registros', $registros);
-            
+            foreach($registros as $x){
+                $x->destinatario = (User::find($x->user_id))->empresa;
+            }
+
+            cantidades($registros);
         }
+
+        return view('aplication/registros/index')->with(['registros' => $registros, 'users' => $users]);
     }
 
     /**
@@ -75,20 +88,22 @@ class RegistrosController extends Controller
             'producto' => 'required',
             'empresa' => 'required',
             'lugar' => 'required',
-            'receptor' => 'required',
-            'repartidor' => 'required',
+            'recibe' => 'required',
+            'entrega' => 'required',
             'medida' => 'required',
         ]);
+
+        $user = User::where('empresa', $request->empresa)->first();
         
         $registro = new Registro();
         
         $registro->volumen = $request->volumen;
         $registro->fecha_descarga = $request->date;
         $registro->producto = $request->producto;
-        $registro->destinatario = $request->empresa;
+        $registro->user_id = $user->id;
         $registro->lugar = $request->lugar;
-        $registro->receptor = $request->receptor;
-        $registro->repartidor = $request->repartidor;
+        $registro->recibe = $request->recibe;
+        $registro->entrega = $request->entrega;
         $registro->hora_camion = $request->hora_camion;
         $registro->hora_descarga = $request->hora_descarga;
         $registro->remitente = $request->remitente;
@@ -147,7 +162,9 @@ class RegistrosController extends Controller
             'receptor' => 'required',
             'repartidor' => 'required',
         ]);
-        
+
+        $user = User::where('empresa', $request->empresa)->first();
+
         Registro::find($id)
                 ->update(['volumen' => $request->volumen,
                         'fecha_descarga' => $request->date,

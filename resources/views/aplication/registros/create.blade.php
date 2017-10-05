@@ -136,7 +136,7 @@
                         <div class="form-group{{ $errors->has('receptor') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Persona que recibe:</label>
                             <div class="col-md-6">
-                                <input onfocusout="upper(this)" type="text" class="form-control" name="receptor" value="{{ old('receptor') }}" required>
+                                <input onfocusout="upper(this)" type="text" class="form-control" name="recibe" value="{{ old('receptor') }}" required>
 
                                 @if ($errors->has('receptor'))
                                     <span class="help-block">
@@ -149,7 +149,7 @@
                         <div class="form-group{{ $errors->has('repartidor') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Persona que entrega:</label>
                             <div class="col-md-6">
-                                <input onfocusout="upper(this)" type="text" class="form-control" name="repartidor" value="{{ old('repartidor') }}" required>
+                                <input onfocusout="upper(this)" type="text" class="form-control" name="entrega" value="{{ old('repartidor') }}" required>
 
                                 @if ($errors->has('repartidor'))
                                     <span class="help-block">
