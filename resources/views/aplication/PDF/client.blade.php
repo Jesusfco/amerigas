@@ -9,7 +9,7 @@
 <body>
     <div>
         <div class="logoContainer">
-            <img src="Images/amerigas.png" style="margin-top: 0px; width: 150px;">
+            <img src="images/amerigas.jpg" style="margin-top: 0px; width: 150px;">
         </div>
         <div class="marca">
             <h3>AMERIGAS PROPANE LP SA DE CV</h2>
@@ -44,7 +44,7 @@
                     <td>{{$n->producto}}</td>
                     <td>{{$n->volumen}} {{$n->medida}}</td>
                     <td>{{$n->lugar}}</td>
-                    <td>{{$n->receptor}}</td>
+                    <td>{{$n->recibe}}</td>
                     <td>ENTREGADO</td>
                 </tr>
                 <?php  $num++; ?>

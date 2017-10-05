@@ -15,7 +15,7 @@
                     @if(Session::has('msj'))
                         <div class="alert alert-success alert-dismissible" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <strong>Exito!</strong> La venta ha sido registrada
+                                <strong>Exito!</strong> La venta ha sido editada con Exito
                         </div>
                     @endif
                     
@@ -31,7 +31,7 @@
                         <div class="form-group {{ $errors->has('empresa') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Empresa que recibe</label>
                             <div class="col-md-6">
-                                <input id="autocomplete" type="text" onfocusout="upper(this)" class="form-control" name="empresa" value="{{ $reporte->destinatario }}"  autofocus required>
+                                <input id="autocomplete" type="text" onfocusout="upper(this)" class="form-control" name="empresa" value="{{ $reporte->empresa }}"  autofocus required>
 
                                 @if ($errors->has('empresa'))
                                     <span class="help-block">
@@ -138,7 +138,7 @@
                         <div class="form-group{{ $errors->has('receptor') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Persona que recibe:</label>
                             <div class="col-md-6">
-                                <input onfocusout="upper(this)" type="text" class="form-control" name="receptor" value="{{ $reporte->receptor }}" required>
+                                <input onfocusout="upper(this)" type="text" class="form-control" name="recibe" value="{{ $reporte->recibe }}" required>
 
                                 @if ($errors->has('receptor'))
                                     <span class="help-block">
@@ -151,7 +151,7 @@
                         <div class="form-group{{ $errors->has('repartidor') ? ' has-error' : '' }}">
                             <label class="col-md-4 control-label">Persona que entrega:</label>
                             <div class="col-md-6">
-                                <input onfocusout="upper(this)" type="text" class="form-control" name="repartidor" value="{{ $reporte->repartidor }}" required>
+                                <input onfocusout="upper(this)" type="text" class="form-control" name="entrega" value="{{ $reporte->entrega }}" required>
 
                                 @if ($errors->has('repartidor'))
                                     <span class="help-block">

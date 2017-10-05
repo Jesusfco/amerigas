@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-   alinear();
+   // alinear();
    
    
     $("#menuBoton").click(function () {
@@ -14,9 +14,9 @@ $(document).ready(function(){
     });
     
     
-    $( window ).resize(function() {
-        alinear();
-    });
+    // $( window ).resize(function() {
+    //     alinear();
+    // });
     
 });
 

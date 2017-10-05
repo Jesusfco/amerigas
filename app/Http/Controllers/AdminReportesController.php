@@ -53,51 +53,48 @@ class AdminReportesController extends Controller
         
         $fecha1 =  $request->date1;
         $fecha2 =  $request->date2;
+
+//        return $fecha1;
         if($request->empresa == 'TODOS') {
             
-            $registros = Registro::whereBetween('fecha_descarga',[$fecha1,$fecha2])
+            $registros = Registro::whereBetween('fecha_descarga',[$fecha2, $fecha1])
                         ->orderBy('fecha_descarga','desc')
                         ->get();
-            foreach($registros as $n) { 
-                $fecha =  explode("-", $n->fecha_descarga);
-                $año = substr($fecha[0], 2);
-                $n->fecha_descarga =  $fecha[2] ."-".conseguirMesMin($fecha[1]) . "-" . $año;
-            }
-
-            cantidades($registros);
-
-            $pdf = PDF::loadView('aplication/PDF/parametro',['registros' => $registros, 'fecha1' => $fecha1, 'fecha2' => $fecha2]);
-            return $pdf->stream('Amerigas-RegistroVentas-Periodo: '.$fecha1."/".$fecha2.'.pdf');
-            
         } else {
-            
-            $usuario = User::where('empresa', '=' , $request->empresa)->first();
-            
-            if($usuario == null) { 
+
+            $usuario = User::where('empresa', $request->empresa)->first();
+
+            if($usuario == null) {
                 return back()->withInput(Input::except('empresa'))->with('error1','error');
             }
-            
-            $registros = Registro::whereBetween('fecha_descarga',[$fecha1,$fecha2])
-                            ->where('destinatario', '=', $request->empresa)
-                            ->orderBy('fecha_descarga','desc')
-                            ->get();
-            
-            foreach($registros as $n) { 
-                $fecha =  explode("-", $n->fecha_descarga);
-                $año = substr($fecha[0], 2);
-                $n->fecha_descarga =  $fecha[2] ."-".conseguirMesMin($fecha[1]) . "-" . $año;
-            }
 
-            cantidades($registros);
-            
-            $pdf = PDF::loadView('aplication/PDF/client',['registros' => $registros,
-                                                          'fecha1' => $fecha1, 
-                                                          'fecha2' => $fecha2,
-                                                           'cliente' => $request->empresa]);
-            return $pdf->stream('Amerigas-RegistroVentas-Cliente: '.$request->empresa."Periodo:".$fecha1."/".$fecha2.'.pdf');
+            $registros = Registro::whereBetween('fecha_descarga',[$fecha2,$fecha1])
+                    ->where('user_id', '=', $usuario->id)
+                    ->orderBy('fecha_descarga','desc')
+                    ->get();
         }
-        
-        
+
+        foreach($registros as $n) {
+            $fecha =  explode("-", $n->fecha_descarga);
+            $año = substr($fecha[0], 2);
+            $n->fecha_descarga =  $fecha[2] ."-".conseguirMesMin($fecha[1]) . "-" . $año;
+            $n->empresa = (User::where('id', $n->user_id)->first())->empresa;
+        }
+        cantidades($registros);
+
+        if($request->empresa == 'TODOS') {
+            $pdf = PDF::loadView('aplication/PDF/parametro', ['registros' => $registros,
+                'fecha1' => $fecha1,
+                'fecha2' => $fecha2]);
+            return $pdf->stream('Amerigas-RegistroVentas-Periodo: ' . $fecha1 . "/" . $fecha2 . '.pdf');
+        }
+
+        $pdf = PDF::loadView('aplication/PDF/client',['registros' => $registros,
+                                                      'fecha1' => $fecha1,
+                                                      'fecha2' => $fecha2,
+                                                       'cliente' => $request->empresa]);
+        return $pdf->stream('Amerigas-RegistroVentas-Cliente: '.$request->empresa."Periodo:".$fecha1."/".$fecha2.'.pdf');
+
     }        
         
 }

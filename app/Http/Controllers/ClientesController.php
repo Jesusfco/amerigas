@@ -114,7 +114,7 @@ class ClientesController extends Controller
      */
     public function drop(Request $request)
     {
-        if( (Registro::where('user_id', $request->id)->get()) == NULL ){
+        if( (Registro::where('user_id', $request->id)->first()) == NULL ){
             User::where('id', $request->id)->delete();
             return response()->json(['message' => 'El usuario ha sido eliminado']);
         }

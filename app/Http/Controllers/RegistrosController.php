@@ -133,6 +133,7 @@ class RegistrosController extends Controller
     public function edit($id)
     {
         $reporte= Registro::find($id);
+        $reporte->empresa = (User::find($reporte->user_id))->empresa;
         $empresa = User::select('empresa')
                     ->where('level', 0)
                     ->get();
@@ -159,20 +160,21 @@ class RegistrosController extends Controller
             'producto' => 'required',
             'empresa' => 'required',
             'lugar' => 'required',
-            'receptor' => 'required',
-            'repartidor' => 'required',
+            'recibe' => 'required',
+            'entrega' => 'required',
         ]);
 
         $user = User::where('empresa', $request->empresa)->first();
 
         Registro::find($id)
-                ->update(['volumen' => $request->volumen,
+                ->update([
+                        'user_id' => $user->id,
+                        'volumen' => $request->volumen,
                         'fecha_descarga' => $request->date,
                         'producto' => $request->producto,
-                        'destinatario' => $request->empresa,
                         'lugar' => $request->lugar,
-                        'receptor' => $request->receptor,
-                        'repartidor' => $request->repartidor,
+                        'recibe' => $request->recibe,
+                        'entrega' => $request->entrega,
                         'hora_camion' => $request->hora_camion,
                         'hora_descarga' => $request->hora_descarga,
                         'remitente' => $request->remitente,

@@ -70,7 +70,9 @@
                             
         @include('layouts.menuSales')  
         <br><br><br>
-        @yield('content')  
+        <div class="espaciador">
+            @yield('content')
+        </div>
         
         
         

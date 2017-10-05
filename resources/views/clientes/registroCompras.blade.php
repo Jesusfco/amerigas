@@ -43,7 +43,7 @@
                                 {{ $n->producto }}
                             </td>
                             <td onclick="optionPop({{ $n->id }}, '{{ $n->destinatario }})">
-                                {{ $n->receptor }}
+                                {{ $n->recibe }}
                             </td>                            
                                                         
                         </tr>                                                

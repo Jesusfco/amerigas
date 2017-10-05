@@ -19,9 +19,9 @@ class ClientReportesController extends Controller
     
     public function registroIndex()
     {
-        $registros = Registro::where('destinatario', Auth::user()->empresa)
+        $registros = Registro::where('user_id', Auth::id())
                         ->orderBy('fecha_descarga','desc')
-                        ->paginate(15);
+                        ->paginate(25);
 
         cantidades($registros);
 
@@ -41,7 +41,7 @@ class ClientReportesController extends Controller
 
         $registro = Registro::whereBetween('fecha_descarga',[$mesActual,$mesSiguiente])
                         ->orderBy('fecha_descarga','desc')
-                        ->where('destinatario', Auth::user()->empresa)
+                        ->where('user_id' , Auth::id())
                         ->get();
         
         foreach($registro as $n) { 
@@ -68,8 +68,8 @@ class ClientReportesController extends Controller
         $fecha1 =  $request->date1;
         $fecha2 =  $request->date2;        
             
-        $registros = Registro::whereBetween('fecha_descarga',[$fecha1,$fecha2])
-                        ->where('destinatario' , Auth::user()->empresa)
+        $registros = Registro::whereBetween('fecha_descarga',[$fecha2,$fecha1])
+                        ->where('user_id' , Auth::id())
                         ->orderBy('fecha_descarga','desc')
                         ->get();
         

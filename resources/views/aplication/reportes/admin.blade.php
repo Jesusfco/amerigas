@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="form-group {{ $errors->has('date1') ? ' has-error' : '' }}">
-                            <label for="date" class="col-md-4 control-label">Fecha 1</label>
+                            <label for="date" class="col-md-4 control-label">Fecha mayor</label>
                             <div class="col-md-6">
                                 <input type="date" class="form-control" name="date1" value="{{ old('date1') }}" required>
                                
@@ -57,7 +57,7 @@
                         </div>
                         
                         <div class="form-group {{ $errors->has('date2') ? ' has-error' : '' }}">
-                            <label for="date" class="col-md-4 control-label">Fecha 2</label>
+                            <label for="date" class="col-md-4 control-label">Fecha menor</label>
                             <div class="col-md-6">
                                 <input type="date" class="form-control" name="date2" value="{{ old('date2') }}" required>
                                
@@ -100,7 +100,7 @@
    $( function() {
     var availableTags = [
       @foreach($empresas as $n)
-      "{{ $n->empresa}}",
+      "{!!    $n->empresa !!}",
       @endforeach
     ];
     $( "#autocomplete" ).autocomplete({

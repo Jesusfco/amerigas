@@ -22,7 +22,12 @@
 ::-webkit-scrollbar-corner {
       background-color: black;
 }
-   
+
+
+.espaciador {
+    width: 100%;
+    padding-left: 230px;
+}
 
 #panelMargen { 
     padding-left:  25px;
@@ -136,6 +141,11 @@ body {
 @media screen and (max-width: 766px) {
     #principal { 
         width: 100%;
+    }
+
+    .espaciador {
+
+        padding-left: 0;
     }
     #panel { 
         left: -400px;
