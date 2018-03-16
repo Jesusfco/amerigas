@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Curriculum;
 use App\Producto;
+use App\Mail\ContactMail;
+use Mail;
 
 class IndexController extends Controller
 {
@@ -33,28 +35,27 @@ class IndexController extends Controller
     
     public function message(Request $request) 
     {        
-        $_message = $request->mensaje;
-        $_email = $request->correo;
-        $_name = $request->nombre;
+        Mail::send(new ContactMail());
+
+        // Mail::send(['text' => 'mail'], ['name', 'JESUS RODRIGUEZ'], function($message){
+			// 	$message->to('jfcr@live.com', 'TO Bitfumes')->subject('TEST EMAIL');
+			// 	$message->from('rodriguez@amerigas.mx', 'Rodriguez');
+
+			// 	$message->to('rodriguez@amerigas.mx', 'TO Bitfumes')->subject('TEST EMAIL');
+			// 	$message->from('rodriguez@amerigas.mx', 'Rodriguez');
+			// });
+
+			return 'true';
 
 
-        $_toSend = "Nombre: " . $_name . "\nE-mail: " . $_email . "\n\nMensaje:\n" . $_message;
-        //$to = "jfcr@live.com";
-        $to = "ventasamerigas@gmail.com";
-        $subject = "Cliente: " . $_name . " - " . $_email;
-        $headers = "From: $_email" . "\r\n" .
-            "CC: " . $_email;
-
-
-        if (mail($to, $subject, $_toSend, $headers)) {
-            echo true;
-        } else {
-            return false;
-        }
+        // if (mail($to, $subject, $_toSend, $headers)) {
+        //     echo true;
+        // } else {
+        //     return false;
+        // }
 
 
     }
-
     public function findCurriculum(Request $request){
 
         return Curriculum::find($request->id);

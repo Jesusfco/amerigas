@@ -58,20 +58,17 @@
     </center>
 </div>
 <div id="contein">
-@extends('index.scripts')
-@extends('index.contacto')
-@extends('index.descargas')
-@extends('index.curriculum')
-@extends('index.productos')
-@extends('index.slider2')
-@extends('index.nosotros')
-@extends('index.slider1')
-@extends('index.header')    
 
-
-@if(isset($mov))
-@endif
-
+@include('index.header')   
+@include('index.slider1')
+@include('index.nosotros')
+@include('index.slider2')
+@include('index.productos')
+@include('index.curriculum')
+@include('index.descargas')
+@include('index.contacto')
+@include('index.footer') 
+@include('index.scripts')
 
     <style>
         .slide2sks-container { 

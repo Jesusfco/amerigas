@@ -12,6 +12,17 @@
 <script src="{{ asset('js/principal/curriculum.js')}}"></script>
 <script src="{{ asset('loader/loader.js')}}"></script>
 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115931172-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115931172-1');
+</script>
+
+
 
 @if(isset($mov))
 <script>

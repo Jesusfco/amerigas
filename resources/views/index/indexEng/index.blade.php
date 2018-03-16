@@ -56,15 +56,19 @@
     </center>
 </div>   
 <div id="contein">
-@extends('index.scripts')
-@extends('index.indexEng.contacto')
+
 {{--@extends('index.indexEng.descargas')--}}
-@extends('index.indexEng.curriculum')
-@extends('index.indexEng.productos')
-@extends('index.indexEng.slider2')
-@extends('index.indexEng.nosotros')
-@extends('index.indexEng.slider1')
-@extends('index.indexEng.header')    
+
+@include('index.indexEng.header')    
+@include('index.indexEng.slider1')
+@include('index.indexEng.nosotros')
+@include('index.indexEng.slider2')
+@include('index.indexEng.productos')
+@include('index.indexEng.curriculum')
+@include('index.indexEng.contacto')
+@include('index.footer')
+@include('index.scripts')
+
 
     <style>
         .slide2sks-container { 
