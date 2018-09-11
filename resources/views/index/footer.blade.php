@@ -1,6 +1,6 @@
 <div class="footer">
     <div class="text">@Copyright {{ date("Y")}} | All Rights Reserved | Powered by <span> Laravel</span></div>
-    <div class="img"><a href="http://rodriguez.amerigas.mx/"><img src="{{ url('images/Rodriguez.png') }} "></a>
+    <div class="img"><a href="http://roguezservices.com/"><img src="{{ url('images/Rodriguez.png') }} "></a>
     </div>
 </div>    
 
