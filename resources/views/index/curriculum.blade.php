@@ -38,9 +38,9 @@
     
     
     
-    <center>
+    {{-- <center>
         <a class="btn red darken-4" href="pdf/CV_AMERIGAS_SPA.pdf" target="_blank">Descaragar Curriculum<i class="material-icons">play_for_work</i></a>
-    </center>
+    </center> --}}
     <br>
 </div>
 

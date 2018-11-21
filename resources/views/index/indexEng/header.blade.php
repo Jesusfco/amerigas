@@ -11,7 +11,7 @@
         <ul class="right hide-on-med-and-down">
             <li><a id="in">Home</a></li>
             <li><a  id="quie">About Us</a></li>
-            <li><a id="ali">Joint Ventures</a></li>
+            {{-- <li><a id="ali">Joint Ventures</a></li> --}}
             <li><a id="pro">Products</a></li>
             <li><a id="cur">Résumé</a></li>
             <li><a id="cont">Contact</a></li>    
@@ -22,7 +22,7 @@
             <li><a href="/">Spanish</a></li>
             <li><a id="in1">Home</a></li>
             <li><a id="quie1">About Us</a></li>
-            <li><a id="ali1">Joint Ventures</a></li>
+            {{-- <li><a id="ali1">Joint Ventures</a></li> --}}
             <li><a id="pro1">Products</a></li>
             <li><a id="cur1">Résumé</a></li>
             <li><a id="cont1">Contact</a></li>

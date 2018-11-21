@@ -12,10 +12,10 @@
       <ul class="right hide-on-med-and-down">
         <li><a id="in">Inicio</a></li>
         <li><a id="quie">Quienes Somos</a></li>
-        <li><a id="ali">Alianzas</a></li>
+        {{-- <li><a id="ali">Alianzas</a></li> --}}
         <li><a id="pro">Productos</a></li>
         <li><a id="cur">Experiencia</a></li>
-        <li><a id="pdfL">PDF</a></li>
+        {{-- <li><a id="pdfL">PDF</a></li> --}}
         <li><a id="cont">Contacto</a></li>  
         <li><a href="login"><i class="material-icons right">work</i><span style="display: inline">Accesar</span></a></li>
       </ul>
@@ -24,10 +24,10 @@
             <li><a href="eng">English</a></li>
             <li><a id="in1">Inicio</a></li>
             <li><a id="quie1">Quienes Somos</a></li>
-            <li><a id="ali1">Alianzas</a></li>
+            {{-- <li><a id="ali1">Alianzas</a></li> --}}
             <li><a id="pro1">Productos</a></li>
             <li><a id="cur1">Experiencias</a></li>
-            <li><a id="pdfmov">PDF</a></li>
+            {{-- <li><a id="pdfmov">PDF</a></li> --}}
             <li><a id="cont1">Contacto</a></li>
             <li><a href="login"><i class="material-icons left">work</i><span style="display: inline">Accesar</span></a></li>
         </ul>

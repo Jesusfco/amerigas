@@ -33,9 +33,7 @@
 
 </div>
 
-    <center>
-        <a class="btn red darken-4" href="pdf/CV_AMERIGAS_ENG.pdf" target="_blank">Download Resume<i class="material-icons">play_for_work</i></a>
-    </center>
+    
     <br>
 </div>
 

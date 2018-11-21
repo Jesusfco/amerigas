@@ -62,10 +62,10 @@
 @include('index.header')   
 @include('index.slider1')
 @include('index.nosotros')
-@include('index.slider2')
+{{-- @include('index.slider2')  --}}
 @include('index.productos')
 @include('index.curriculum')
-@include('index.descargas')
+{{-- @include('index.descargas') --}}
 @include('index.contacto')
 @include('index.footer') 
 @include('index.scripts')
